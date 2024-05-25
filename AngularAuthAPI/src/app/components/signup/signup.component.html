@@ -1,0 +1,66 @@
+<div class="outer">
+    <div class="container">
+        <div class="row">
+            <div class="offset-md-2 col-lg-5 col-md-7 offset-lg-4 offset-md-3">
+                <div class="panel border bg-light">
+                    <div class="panel-heading">
+                        <h3 class="pt-3 font-weight-bold">Signup</h3>
+                    </div>
+                    <div class="panel-body p-3">
+                        <form [formGroup]="signUpForm">
+                            <div class="form-group pt-3">
+                                <small class="text-danger" *ngIf="signUpForm.controls['firstName'].dirty && signUpForm.hasError('required','firstName')" >*Firstname is required</small>
+                                <div class="input-field" [class.error]="signUpForm.controls['firstName'].dirty && signUpForm.hasError('required','firstName')">
+                                        <span class="fa fa-user p-2"></span>
+                                        <input type="text" placeholder="Firstname" formControlName="firstName" class="mx-2">
+                                    
+                                </div>
+                            </div>
+
+                            <div class="form-group pt-3">
+                                <small class="text-danger" *ngIf="signUpForm.controls['lastName'].dirty && signUpForm.hasError('required','lastName')">*Lastname is required</small>
+                                <div class="input-field" [class.error]="signUpForm.controls['lastName'].dirty && signUpForm.hasError('required','lastName')">
+                                        <span class="fa fa-user p-2"></span>
+                                        <input type="text" placeholder="Lastname" formControlName="lastName" class="mx-2">
+                                    
+                                </div>
+                            </div>
+
+                            <div class="form-group pt-3">
+                                <small class="text-danger" *ngIf="signUpForm.controls['email'].dirty && signUpForm.hasError('required','email')">*Email is required</small>
+                                <div class="input-field" [class.error]="signUpForm.controls['email'].dirty && signUpForm.hasError('required','email')">
+                                        <span class="fa fa-user p-2"></span>
+                                        <input type="text" placeholder="Email" formControlName="email" class="mx-2">
+                                    
+                                </div>
+                            </div>
+                            <div class="form-group pt-3">
+                                <small class="text-danger" *ngIf="signUpForm.controls['username'].dirty && signUpForm.hasError('required','username')">*Username is required</small>
+                                <div class="input-field" [class.error]="signUpForm.controls['username'].dirty && signUpForm.hasError('required','username')">
+                                        <span class="fa fa-user p-2"></span>
+                                        <input type="text" placeholder="Username" formControlName="username" class="mx-2">
+                                    
+                                </div>
+                            </div>
+
+                            <div class="form-group pt-3">
+                                <small class="text-danger" *ngIf="signUpForm.controls['password'].dirty && signUpForm.hasError('required','password')">*Password is required</small>
+                                <div class="input-field" [class.error]="signUpForm.controls['password'].dirty && signUpForm.hasError('required','password')">
+                                        <span class="fa fa-solid fa-lock p-2"></span>
+                                        <input type={{type}} placeholder="Password" formControlName="password" class="mx-2">
+                                    <span (click) = "hideShowPass()" class="fa fa-eye {{eyeIcon}}"></span>
+                                </div>
+                            </div>
+                            <div class="form-inline fr mt-4">
+                                <a href="" id="forget" class="font-weight-bold">Forget Password?</a>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block mt-4 w-100" (click)="onSubmit()">Login</button>
+                            <div class="text-center pt-4 text-muted">Already have account?<a routerLink="/login" id="foget">signup</a></div>
+                        </form>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
